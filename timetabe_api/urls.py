@@ -25,7 +25,9 @@ urlpatterns = [
     path('api/faculties', FacultiesList.as_view()),
     path('api/departments', DepartmentsList.as_view()),
     path('api/programs', ProgramList.as_view()),
-    path('api/programunits', CourseDetailsList.as_view()),
+    path('api/units', CourseDetailsList.as_view()),
+    path('api/timetable', Timetable.as_view()),
+    path('api/timetable/get', StudentTimetable.as_view())
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
