@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <h1>Here are all students</h1>
+    <div class="container">
+        <ol>
+            {% for student in all_students %}
+                <li>
+                    <a href="get?reg={{ student.regnumber }}">{{ student.regnumber }} - {{ student.firstname }} {{ student.surname }}</a>
+                </li>
+            {% endfor %}
+        </ol>
+    </div>
+
+{% endblock %}

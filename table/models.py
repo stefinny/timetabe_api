@@ -13,7 +13,6 @@ class Departments(models.Model):
     faculty = models.ForeignKey('Faculties', models.CASCADE, db_column='faculty', blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'departments'
 
     def __str__(self):
@@ -24,7 +23,6 @@ class Faculties(models.Model):
     facultyname = models.CharField(max_length=100, blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'faculties'
 
     def __str__(self):
@@ -36,7 +34,6 @@ class Programs(models.Model):
     department = models.ForeignKey(Departments, models.CASCADE, db_column='department', blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'programs'
 
     def __str__(self):
@@ -49,7 +46,6 @@ class Coursedetails(models.Model):
     year = models.IntegerField()
 
     class Meta:
-        managed = False
         db_table = 'coursedetails'
 
     def __str__(self):
@@ -64,7 +60,6 @@ class Students(models.Model):
     year = models.IntegerField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'students'
 
     def __str__(self):
@@ -81,7 +76,6 @@ class Units(models.Model):
     day = models.CharField(max_length=15)
 
     class Meta:
-        managed = False
         db_table = 'units'
 
 
@@ -95,5 +89,4 @@ class Venues(models.Model):
     day = models.CharField(max_length=15)
 
     class Meta:
-        managed = False
         db_table = 'venues'

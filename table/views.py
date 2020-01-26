@@ -1,13 +1,14 @@
-from django.shortcuts import render, get_object_or_404
-from django.utils.datastructures import MultiValueDictKeyError
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from .models import *
-from .serializers import *
-from rest_framework import status
-import os
 import json
+import os
 import time
+
+from django.shortcuts import get_object_or_404
+from django.utils.datastructures import MultiValueDictKeyError
+from rest_framework import status
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
+from .serializers import *
 
 
 # Create your views here.
@@ -95,7 +96,7 @@ class CourseDetailsList(APIView):
                 units.append(unit)
             data = {'id': course['id'], 'name': course['coursename_id'], 'year': course['year'], 'units': units}
             return Response(data)
-        except:
+        except IndexError:
             return Response({'Error': 'Not found'}, status=status.HTTP_404_NOT_FOUND)
 
 

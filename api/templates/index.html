@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+    
+    {% block body %}
+        <div class="container">
+            <div class="row">
+                <a href="students/" >
+                    <div class="col-md-3 mb-4" style="background-color: #d9edf7">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">STUDENTS</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">Total: {{students_count}}</div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="programs/">
+                    <div class="col-md-3 mb-4" style="background-color: #d9edf7">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">PROGRAMS</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">Total: {{programs_count}}</div>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="col-sm-3">
+
+                </div>
+
+            </div>
+        </div>
+    {% endblock %}
