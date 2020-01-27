@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block body %}
+    <title>Program Details | Timetable</title>
+    <h2>COURSE DETAILS</h2>
+    <ol>
+        {% for program in programs %}
+            <li>{{program.name}} year {{ program.year }}</li>
+            <ul>
+                {% for unit in program.units %}
+                    <li>{{unit}}</li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </ol>
+{% endblock %}

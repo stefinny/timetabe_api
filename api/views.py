@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse
-from table.models import Students, Programs
+from table.models import Students, Programs, Coursedetails
 
 
 # Create your views here.
@@ -32,9 +32,23 @@ def student_details(request):
     return render(request, 'student_details.html', context=context)
 
 
-def programs_details(request):
+def programs_list(request):
     all_programs = Programs.objects.all()
     context = {
         'all_programs': all_programs
     }
-    return render(request, 'programs_details.html', context)
+    return render(request, 'programs_list.html', context)
+
+
+def program_details(request, program_name):
+    program = Coursedetails.objects.filter(coursename=program_name)
+    programs = []
+    for p in program:
+        units = p.units.split('.')
+        pr = {'name': p.coursename, 'units': units, 'year': p.year}
+        programs.append(pr)
+    print(programs)
+    context = {
+        'programs': programs,
+    }
+    return render(request, 'program_details.html', context)

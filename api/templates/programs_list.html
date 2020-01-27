@@ -8,12 +8,11 @@
     <h2>LIST OF ALL PROGRAMS</h2>
     <ol>
         {% for program in all_programs %}
-            <a href="#">
+            <a href="{{ program.name }}/">
                 <li>
                     {{ program.name }} - {{ program.department }}
                 </li>
             </a>
         {% endfor %}
-
     </ol>
 {% endblock %}
