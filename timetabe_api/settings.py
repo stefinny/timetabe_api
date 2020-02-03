@@ -25,7 +25,7 @@ SECRET_KEY = 'w9yc+b@(t$7$)!s7a!#@f24@^zs60&off@a(geb++zkva=)yic'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['chukatimetable.pythonanywhere.com']
 
 
 # Application definition
