@@ -80,10 +80,10 @@ WSGI_APPLICATION = 'timetabe_api.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'timetable',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': '127.0.0.1',
+        'NAME': 'chukatimetable$default',
+        'USER': 'chukatimetable',
+        'PASSWORD': 'Steven.1998',
+        'HOST': 'chukatimetable.mysql.pythonanywhere-services.com',
         'PORT': '3306',
     }
 }

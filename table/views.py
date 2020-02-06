@@ -182,8 +182,8 @@ class StudentTimetable(APIView):
                             # looking for lessons for today
                             if lesson['day'] == get_week_day():
                                 data.append(lesson)
-                    return Response(data, status=status.HTTP_302_FOUND)
+                    return Response(data, status=status.HTTP_200_OK)
                 else:
-                    return Response(table, status=status.HTTP_302_FOUND)
+                    return Response(table, status=status.HTTP_200_OK)
         except FileNotFoundError:
             return Response({'Error': 'Timetable does not exist'}, status=status.HTTP_404_NOT_FOUND)
